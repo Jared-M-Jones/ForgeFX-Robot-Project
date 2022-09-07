@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 1092150439}
   - component: {fileID: 1092150438}
   - component: {fileID: 1092150437}
-  - component: {fileID: 1092150436}
+  - component: {fileID: 1092150440}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -442,19 +442,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1092150436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092150435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a59706f2ded9c354dabafba6a616cc0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 4266569959085583671}
 --- !u!81 &1092150437
 AudioListener:
   m_ObjectHideFlags: 0
@@ -520,6 +507,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1092150440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092150435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ddd560d3356cd448be2feacb7742e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 4266569959085583671}
 --- !u!1 &1288206637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,6 +1487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b15cea71760e98469165755691d5c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1876811693651404033
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1732,7 +1733,6 @@ GameObject:
   - component: {fileID: 3570507556793902039}
   - component: {fileID: 3570507556793902040}
   - component: {fileID: 3570507556793902041}
-  - component: {fileID: 3570507556793902042}
   m_Layer: 0
   m_Name: Robot_Upperarm_Left
   m_TagString: Untagged
@@ -1752,6 +1752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b15cea71760e98469165755691d5c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &3570507556793902039
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1790,22 +1791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dafc19e98713204fb57064a33631ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &3570507556793902042
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3570507556793902037}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3605817427459910977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,6 +2114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b15cea71760e98469165755691d5c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &5694113335186991199
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2264,6 +2250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b15cea71760e98469165755691d5c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &6762187366473999745
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2463,6 +2450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b15cea71760e98469165755691d5c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &7566743397324875749
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2628,7 +2616,6 @@ GameObject:
   - component: {fileID: 7953097747429835194}
   - component: {fileID: 7953097747429835193}
   - component: {fileID: 7953097747429835195}
-  - component: {fileID: 7953097747429835196}
   m_Layer: 0
   m_Name: Robot_Torso
   m_TagString: Untagged
@@ -2648,6 +2635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b15cea71760e98469165755691d5c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &7953097747429835194
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2674,22 +2662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8a88e8820a25c4e8e594130dcb58f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &7953097747429835196
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7953097747429835192}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &8308084558449482974
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2802,7 +2774,6 @@ GameObject:
   - component: {fileID: 8989860522206542500}
   - component: {fileID: 8989860522206542502}
   - component: {fileID: 8989860522206542503}
-  - component: {fileID: 8989860522206542504}
   m_Layer: 0
   m_Name: Robot_Upperarm_Right
   m_TagString: Untagged
@@ -2836,6 +2807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b15cea71760e98469165755691d5c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &8989860522206542502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2860,22 +2832,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dafc19e98713204fb57064a33631ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &8989860522206542504
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8989860522206542499}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &9219944703108135866
 Transform:
   m_ObjectHideFlags: 0

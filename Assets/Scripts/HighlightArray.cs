@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class HighlightArray : MonoBehaviour
 {
-    //public GameObject target;
-
     // stores the target's original color
+    [SerializeField]
     private Color m_OriginalColor;
 
     // get the target and it's children's renderers to access the their materials and colors
     private Renderer[] m_Renderer;
 
 
-    void Start()
+    private void Awake()
     {
         // fetch the renderer component from the target and it's children and stores it in an array
         m_Renderer = GetComponentsInChildren<Renderer>();
@@ -22,7 +21,7 @@ public class HighlightArray : MonoBehaviour
         m_OriginalColor = GetComponent<Renderer>().material.color;
     }
 
-    void OnMouseEnter()
+    public void OnMouseEnter()
     {
         // set target and it's children colors to red when the mouse is over target
         foreach(var rend in m_Renderer)
@@ -31,7 +30,7 @@ public class HighlightArray : MonoBehaviour
         }
     }
 
-    void OnMouseExit()
+    public void OnMouseExit()
     {
         // set target and it's children colors back to it's original color
         foreach (var rend in m_Renderer)

@@ -7,7 +7,7 @@ public class TextController : MonoBehaviour
 {
     private TextManager textManager;
 
-    void Start()
+    void Awake()
     {
         textManager = GameObject.Find("Canvas").GetComponent<TextManager>();
 
@@ -19,9 +19,9 @@ public class TextController : MonoBehaviour
         //Check for a match with the specified name on any GameObject that collides with your GameObject
         if (collision.gameObject.name == "Robot_Torso")
         {
-            textManager.rightUpdate = 1;
+            textManager.rightArmAttached.enabled = false;
             //textManager.rightArmDetached.enabled = true;
-            Debug.Log(textManager.rightUpdate);
+            Debug.Log("something");
 
         }
 
