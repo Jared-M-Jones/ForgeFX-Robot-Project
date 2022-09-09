@@ -2,28 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// rotates the camera around the gameObject using the W/A/S/D keys and rolls the camera using the Q/R keys
+
 public class RotationalCamera : MonoBehaviour
 {
-    public GameObject target; // Target to rotate around
+    // target to rotate around
+    [SerializeField]
+    private GameObject target;
 
     [SerializeField]
     private Camera mainCam;
-    private float camRotSpeed = 40.0f; // Speed of Rotation
+
+    // speed of Rotation
+    [SerializeField]
+    private float camRotSpeed = 40.0f;
+
     private float verticalInput;
+
     private float horizontalInput;
+
     private float rollInput;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        // initializes the camera position and orientation
         mainCam = Camera.main;
-
         mainCam.transform.position = new Vector3(0, 0.2f, 0.5f);
         mainCam.transform.LookAt(target.transform.position);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         ApplyVerticleInput();
 

@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// creates the text for the right/left arm attached/detached
+// changes text based on if the limbs are attached/detached
+
 public class TextManager : MonoBehaviour
 {
-    public Text rightArm;
-    public Text rightArmAttached;
-    public Text rightArmDetached;
+    [SerializeField]
+    private Text rightArm, rightArmAttached, rightArmDetached;
 
-    public Text leftArm;
-    public Text leftArmAttached;
-    public Text leftArmDetached;
+    [SerializeField]
+    private Text leftArm, leftArmAttached, leftArmDetached;
 
     public int rightUpdate = 0;
+
     public int leftUpdate = 0;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rightArm.text = "Right Arm: ";
         rightArmAttached.text = "Attached";
@@ -35,7 +37,7 @@ public class TextManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         CheckUpdate();
     }
@@ -53,15 +55,15 @@ public class TextManager : MonoBehaviour
             rightArmDetached.enabled = true;
         }
 
-        if (leftUpdate != 0)
-        {
-            leftArmAttached.enabled = false;
-            leftArmDetached.enabled = true;
-        }
-        else
+        if (leftUpdate == 0)
         {
             leftArmAttached.enabled = true;
             leftArmDetached.enabled = false;
+        }
+        else
+        {
+            leftArmAttached.enabled = false;
+            leftArmDetached.enabled = true;
         }
     }
 }

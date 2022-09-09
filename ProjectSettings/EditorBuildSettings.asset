@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Robot1.unity
+    guid: 9592a0f9d8a06314896c747856bea1e6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0b815460014f0b3479df67a0a55d907c, type: 2}
