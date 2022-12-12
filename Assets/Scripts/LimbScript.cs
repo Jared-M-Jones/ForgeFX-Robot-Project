@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,12 @@ public class LimbScript : MonoBehaviour
     
     private Collider m_Collider;
 
-    public TextManager textManager;
+    private bool _isRightArmAttached = true;
+    private bool _isLeftArmAttached = true;
 
+    public bool RightArmAttached => _isRightArmAttached;
+    public bool LeftArmAttached => _isLeftArmAttached;
+    /*
     private void Awake()
     {
         textManager = GameObject.Find("Canvas").GetComponent<TextManager>();
@@ -82,5 +87,5 @@ public class LimbScript : MonoBehaviour
             {
                 transform.position = attachPoint.transform.position;
             }
-    }
+    }*/
 }

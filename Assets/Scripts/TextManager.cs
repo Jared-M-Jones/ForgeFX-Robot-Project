@@ -3,67 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// creates the text for the right/left arm attached/detached
-// changes text based on if the limbs are attached/detached
-
 public class TextManager : MonoBehaviour
 {
-    [SerializeField]
-    private Text rightArm, rightArmAttached, rightArmDetached;
+    private LimbScript _limbScript;
 
-    [SerializeField]
-    private Text leftArm, leftArmAttached, leftArmDetached;
+    [SerializeField] private Text _arms;
+    [SerializeField] private Text _rightArm;
+    [SerializeField] private Text _leftArm;
 
-    public int rightUpdate = 0;
+    [SerializeField] private Color _attachedColor = Color.green;
+    [SerializeField] private Color _detachedColor = Color.red;
 
-    public int leftUpdate = 0;
+    private string _attachedString = "Attached";
+    private string _detachedString = "Detached";
 
-    // Start is called before the first frame update
-    private void Start()
+    private void OnEnable()
     {
-        rightArm.text = "Right Arm: ";
-        rightArmAttached.text = "Attached";
-        rightArmAttached.color = Color.green;
-        rightArmDetached.text = "Detached";
-        rightArmDetached.color = Color.red;
-        rightArmDetached.enabled = false;
-
-        leftArm.text = "Left Arm: ";
-        leftArmAttached.text = "Attached";
-        leftArmAttached.color = Color.green;
-        leftArmDetached.text = "Detached";
-        leftArmDetached.color = Color.red;
-        leftArmDetached.enabled = false;
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        CheckUpdate();
-    }
-
-    private void CheckUpdate()
-    {
-        if (rightUpdate == 0)
+        if (_limbScript.RightArmAttached == true)
         {
-            rightArmAttached.enabled = true;
-            rightArmDetached.enabled = false;
+            _rightArm.text = _attachedString;
+            _rightArm.color = _attachedColor;
         }
         else
         {
-            rightArmAttached.enabled = false;
-            rightArmDetached.enabled = true;
+            _rightArm.text = _detachedString;
+            _rightArm.color = _detachedColor;
         }
 
-        if (leftUpdate == 0)
+        if (_limbScript.LeftArmAttached == true)
         {
-            leftArmAttached.enabled = true;
-            leftArmDetached.enabled = false;
+            _leftArm.text = _attachedString;
+            _leftArm.color = _attachedColor;
         }
         else
         {
-            leftArmAttached.enabled = false;
-            leftArmDetached.enabled = true;
+            _leftArm.text = _detachedString;
+            _leftArm.color = _detachedColor;
         }
     }
+
 }

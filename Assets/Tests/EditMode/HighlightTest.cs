@@ -20,7 +20,7 @@ public class HighlightTest
         // Act
         foreach (HighlightArray colors in hColors)
         {
-            if (colors.m_HighlightColor != HighlightColor)
+            if (colors._highlightColor != HighlightColor)
             {
                 errorCounter++;
             }
