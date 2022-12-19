@@ -17,19 +17,15 @@ public class TextManager : MonoBehaviour
     private string _attachedString = "Attached";
     private string _detachedString = "Detached";
 
-    private void OnEnable()
+    private void Update()
     {
-        if (_limbScript.RightArmAttached == true)
-        {
-            _rightArm.text = _attachedString;
-            _rightArm.color = _attachedColor;
-        }
-        else
-        {
-            _rightArm.text = _detachedString;
-            _rightArm.color = _detachedColor;
-        }
+        CheckRightArm();
 
+        CheckLeftArm();
+    }
+
+    private void CheckLeftArm()
+    {
         if (_limbScript.LeftArmAttached == true)
         {
             _leftArm.text = _attachedString;
@@ -42,4 +38,17 @@ public class TextManager : MonoBehaviour
         }
     }
 
+    private void CheckRightArm()
+    {
+        if (_limbScript.RightArmAttached == true)
+        {
+            _rightArm.text = _attachedString;
+            _rightArm.color = _attachedColor;
+        }
+        else
+        {
+            _rightArm.text = _detachedString;
+            _rightArm.color = _detachedColor;
+        }
+    }
 }

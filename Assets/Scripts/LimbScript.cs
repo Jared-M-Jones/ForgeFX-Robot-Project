@@ -10,7 +10,7 @@ public class LimbScript : MonoBehaviour
     // creates a new object at the arm's original start position as an anchor for the arm to return to
     private GameObject attachPoint;  
     
-    private Collider m_Collider;
+    private Collider _collider;
 
     private bool _isRightArmAttached = true;
     private bool _isLeftArmAttached = true;
@@ -22,7 +22,7 @@ public class LimbScript : MonoBehaviour
     {
         textManager = GameObject.Find("Canvas").GetComponent<TextManager>();
 
-        m_Collider = GetComponent<Collider>();
+        _collider = GetComponent<Collider>();
     }
 
     private void Start()
@@ -42,7 +42,7 @@ public class LimbScript : MonoBehaviour
     {
         if (gameObject.name == "Robot_Upperarm_Right")
         {
-            if (m_Collider.bounds.Contains(attachPoint.transform.position))
+            if (_collider.bounds.Contains(attachPoint.transform.position))
             {
                 textManager.rightUpdate = 0;
 
@@ -58,7 +58,7 @@ public class LimbScript : MonoBehaviour
 
         if (gameObject.name == "Robot_Upperarm_Left")
         {
-            if (m_Collider.bounds.Contains(attachPoint.transform.position))
+            if (_collider.bounds.Contains(attachPoint.transform.position))
             {
                 textManager.leftUpdate = 0;
 

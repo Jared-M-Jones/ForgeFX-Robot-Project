@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,17 +8,29 @@ public class HighlightArray : MonoBehaviour
 {
     [field: SerializeField] protected List<Renderer> _renderer = default;
 
-    [SerializeField] private Color _originalColor;
+    //[SerializeField] private Color _originalColor;
 
+    //[field: SerializeField] public Color _originalColor { get; private set; } = default;
     [field: SerializeField] public Color _highlightColor { get; private set; }  = Color.red;
+
+    private Dictionary<Renderer, Material[]> _originalColor = new Dictionary<Renderer, Material[]>();
 
 
     private void Awake()
     {
-        _originalColor = GetComponent<Renderer>().material.color;  
+        foreach (var rend in _renderer)
+        {
+            _originalColor[rend] = rend.materials;
+        }
     }
 
-    private void OnMouseEnter()
+    private void Update()
+    {
+        OnHover();
+        OffHover();
+    }
+
+    private void OnHover()
     {
         foreach (var rend in _renderer)
         {
@@ -25,11 +38,17 @@ public class HighlightArray : MonoBehaviour
         }
     }
 
-    private void OnMouseExit()
+    private void OffHover()
     {
         foreach (var rend in _renderer)
         {
-            rend.material.color = _originalColor;                 
+            rend.materials = _originalColor[rend];
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        
+    }
+
 }
