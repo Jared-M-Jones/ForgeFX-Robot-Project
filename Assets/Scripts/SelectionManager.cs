@@ -5,64 +5,31 @@ using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
 {
-    [SerializeField] private LayerMask _layer;
-
-    //private HighlightSelectionResponse _highlight;
-
-    [SerializeField] private Color _highlightColor = Color.red;
-    [SerializeField] private Color _defaultColor = Color.white;
+    [SerializeField] private RaycastProvider _raycastProvider;
 
     private Transform _currentSelection;
-    private Transform _selection;
+
+    public event Action<Transform> OnHoverChanged = delegate { };
+    public event Action<Transform> OnSelectionChanged = delegate { };
 
     private void Update()
     {
-        if (_currentSelection != null) OnDeselect(_currentSelection);
+        var Selection = _raycastProvider.GetSelection();
 
-        Check(CreateRay());
-        _currentSelection = GetSelection();
-
-        if (_currentSelection != null) OnSelect(_currentSelection);
-    }
-
-    public void Check(Ray ray)
-    {
-        _selection = null;
-        if (Physics.Raycast(ray, out var hit, _layer))
+        if(_currentSelection != Selection)
         {
-            var selection = hit.transform;
-            _selection = selection;
-
-            Debug.DrawRay(ray.origin, ray.direction);
-            Debug.Log(hit.collider, hit.collider);
+            OnHoverChanged(Selection);
+            _currentSelection = Selection;
         }
-    }
 
-    public static Ray CreateRay()
-    {
-        return Camera.main.ScreenPointToRay(Input.mousePosition);
-    }
-
-    public Transform GetSelection()
-    {
-        return _selection;
-    }
-
-    public void OnSelect(Transform selection)
-    {
-        var selectionRenderer = selection.GetComponent<Renderer>();
-        if (selectionRenderer != null)
+        if (Input.GetMouseButtonDown(0))
         {
-            selectionRenderer.material.color = _highlightColor;
+            OnSelectionChanged(Selection);
+            _currentSelection = Selection;
         }
-    }
-
-    public void OnDeselect(Transform selection)
-    {
-        var selectionRenderer = selection.GetComponent<Renderer>();
-        if (selectionRenderer != null)
-        {
-            selectionRenderer.material.color = _defaultColor;
-        }
+        //if (_currentSelection != Selection && Input.GetMouseButtonUp(0))
+        //{
+        //    _currentSelection = null;
+        //}
     }
 }
