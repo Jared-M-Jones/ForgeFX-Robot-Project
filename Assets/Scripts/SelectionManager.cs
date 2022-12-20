@@ -1,46 +1,68 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
 {
-    [SerializeField] private Color _highlightColor = Color.red;
-    [SerializeField] private Color _defaultColor;
+    [SerializeField] private LayerMask _layer;
 
+    //private HighlightSelectionResponse _highlight;
+
+    [SerializeField] private Color _highlightColor = Color.red;
+    [SerializeField] private Color _defaultColor = Color.white;
+
+    private Transform _currentSelection;
     private Transform _selection;
 
-    private void Awake()
+    private void Update()
     {
-        if (_selection != null)
-        {
-            var selectionRenderer = _selection.GetComponent<Renderer>();
-            selectionRenderer.material.color = _defaultColor;
-            _selection = null;
-        }
+        if (_currentSelection != null) OnDeselect(_currentSelection);
+
+        Check(CreateRay());
+        _currentSelection = GetSelection();
+
+        if (_currentSelection != null) OnSelect(_currentSelection);
     }
 
-    void Update()
+    public void Check(Ray ray)
     {
-        //if( Physics.Raycast (ray, out hit, layermask))
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, LayerMask.GetMask("Interactable")))
+        _selection = null;
+        if (Physics.Raycast(ray, out var hit, _layer))
         {
             var selection = hit.transform;
-            var selectionRenderer = selection.GetComponent<Renderer>();
-            if (selectionRenderer!= null)
-            {
-                selectionRenderer.material.color = _highlightColor;
-            }
             _selection = selection;
+
+            Debug.DrawRay(ray.origin, ray.direction);
+            Debug.Log(hit.collider, hit.collider);
         }
     }
 
-    private void OnDrawGizmos()
+    public static Ray CreateRay()
     {
+        return Camera.main.ScreenPointToRay(Input.mousePosition);
+    }
 
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Gizmos.color = Color.green;
-        Gizmos.DrawRay (ray.origin, Input.mousePosition);
+    public Transform GetSelection()
+    {
+        return _selection;
+    }
+
+    public void OnSelect(Transform selection)
+    {
+        var selectionRenderer = selection.GetComponent<Renderer>();
+        if (selectionRenderer != null)
+        {
+            selectionRenderer.material.color = _highlightColor;
+        }
+    }
+
+    public void OnDeselect(Transform selection)
+    {
+        var selectionRenderer = selection.GetComponent<Renderer>();
+        if (selectionRenderer != null)
+        {
+            selectionRenderer.material.color = _defaultColor;
+        }
     }
 }

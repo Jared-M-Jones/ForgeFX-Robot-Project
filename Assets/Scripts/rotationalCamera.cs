@@ -7,20 +7,12 @@ using UnityEngine;
 public class RotationalCamera : MonoBehaviour
 {
     // target to rotate around
-    [SerializeField]
-    private GameObject target;
-
-    [SerializeField]
-    private Camera mainCam;
-
-    // speed of Rotation
-    [SerializeField]
-    private float camRotSpeed = 40.0f;
+    [SerializeField] private GameObject target;
+    [SerializeField] private Camera mainCam;
+    [SerializeField] private float camRotSpeed = 40.0f;
 
     private float verticalInput;
-
     private float horizontalInput;
-
     private float rollInput;
 
     private void Start()
