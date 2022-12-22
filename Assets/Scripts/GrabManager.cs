@@ -9,19 +9,6 @@ public class GrabManager : MonoBehaviour
 
     private IGrabbable _grabTarget;
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-
-        }
-    }
-
     private void OnEnable()
     {
         _selectionManager.OnSelectionChanged += OnSelectionChanged;

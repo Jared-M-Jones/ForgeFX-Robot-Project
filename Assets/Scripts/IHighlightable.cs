@@ -2,6 +2,5 @@
 {
     public void OnHoverEnter();
     public void OnHoverExit();
-    public void OnSelectObject();
-    public void OnDeselectObject();
+    //public bool HoverActive { get; } 
 }

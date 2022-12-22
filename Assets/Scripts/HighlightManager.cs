@@ -7,7 +7,7 @@ public class HighlightManager : MonoBehaviour
     [SerializeField] private SelectionManager _selectionManager;
 
     private IHighlightable _hoverTarget;
-    private IHighlightable _selectionTarget;
+    private ISelectable _selectionTarget;
 
     private void OnEnable()
     {
@@ -23,11 +23,8 @@ public class HighlightManager : MonoBehaviour
 
     private void OnHoverChanged(Transform obj)
     {
-        if (_hoverTarget != default)
-        {
-            _hoverTarget.OnHoverExit();
-        }
-        if (obj && obj.TryGetComponent<IHighlightable>(out _hoverTarget))
+        _hoverTarget?.OnHoverExit();
+        if (obj && obj.TryGetComponent(out _hoverTarget))
         {
             _hoverTarget.OnHoverEnter();
         }
@@ -35,11 +32,8 @@ public class HighlightManager : MonoBehaviour
 
     private void OnSelectionChanged(Transform obj)
     {
-        if (_selectionTarget != default)
-        {
-            _selectionTarget.OnDeselectObject();
-        }
-        if (obj && obj.TryGetComponent<IHighlightable>(out _selectionTarget))
+        _selectionTarget?.OnDeselectObject();
+        if (obj && obj.TryGetComponent(out _selectionTarget))
         {
             _selectionTarget.OnSelectObject();
         }

@@ -7,29 +7,39 @@ public class SelectionManager : MonoBehaviour
 {
     [SerializeField] private RaycastProvider _raycastProvider;
 
-    private Transform _currentSelection;
+    private Transform _hover;
+    private Transform _selection;
 
     public event Action<Transform> OnHoverChanged = delegate { };
     public event Action<Transform> OnSelectionChanged = delegate { };
 
     private void Update()
     {
-        var Selection = _raycastProvider.GetSelection();
+        var selection = _raycastProvider.GetSelection();
 
-        if(_currentSelection != Selection)
-        {
-            OnHoverChanged(Selection);
-            _currentSelection = Selection;
-        }
+        UpdateHover(selection);
+        UpdateSelection(selection);
+    }
 
+    private void UpdateHover(Transform selection)
+    {
+        if (_hover == selection || Input.GetMouseButton(0)) return;
+
+        OnHoverChanged(selection);
+        _hover = selection;
+    }
+
+    private void UpdateSelection(Transform selection)
+    {
         if (Input.GetMouseButtonDown(0))
         {
-            OnSelectionChanged(Selection);
-            _currentSelection = Selection;
+            OnSelectionChanged(selection);
+            _selection = selection;
         }
-        //if (_currentSelection != Selection && Input.GetMouseButtonUp(0))
-        //{
-        //    _currentSelection = null;
-        //}
+        else if (Input.GetMouseButtonUp(0))
+        {
+            OnSelectionChanged(null);
+            _selection = null;
+        }
     }
 }
