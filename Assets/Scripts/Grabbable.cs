@@ -8,7 +8,7 @@ public class Grabbable : MonoBehaviour, IGrabbable
 
     public bool GrabActive { get; private set; }
 
-    public void OnGrabObject(Transform obj)
+    public void OnGrabObject()
     {
         GrabActive = true;
         UpdateState();
@@ -28,6 +28,6 @@ public class Grabbable : MonoBehaviour, IGrabbable
 
 public interface IGrabbable
 {
-    public void OnGrabObject(Transform obj);
+    public void OnGrabObject();
     public void OnDropObject();
 }
