@@ -7,7 +7,7 @@ public class GrabManager : MonoBehaviour
 {
     [SerializeField] private SelectionManager _selectionManager;
 
-    private IGrabbable _grabTarget;
+    private IGrabbable _grabSelection;
 
     private void OnEnable()
     {
@@ -21,13 +21,10 @@ public class GrabManager : MonoBehaviour
 
     private void OnSelectionChanged(Transform obj)
     {
-        if (_grabTarget != default)
+        _grabSelection?.OnDropObject();
+        if (obj && obj.TryGetComponent(out _grabSelection))
         {
-            _grabTarget.OnDropObject();
-        }
-        if (obj && obj.TryGetComponent<IGrabbable>(out _grabTarget))
-        {
-            _grabTarget.OnGrabObject(obj);
+            _grabSelection.OnGrabObject(obj);
         }
     }
 }

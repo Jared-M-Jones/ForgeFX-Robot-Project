@@ -14,25 +14,10 @@ public class Highlightable : MonoBehaviour, IHighlightable, ISelectable
     public bool HoverActive { get; private set; }
     public bool Selected { get; private set; }
 
-    //private List<Renderer> _tempList;
-    //private GameObject _parent;
-
     [ContextMenu("Fill Renderers")]
     private void PopulateRenderer()
     {
-        //_parent = transform.parent.gameObject;
-        //if (_parent.GetComponentInParent<Renderer>() == true)
-        //{
-        //    //_tempList = _parent.GetComponentsInChildren<Renderer>().ToList();
-        //}
-        //_rendererList = _rendererList.Union(_tempList).ToList();
-
         _rendererList = GetComponentsInChildren<Renderer>().ToList();
-
-        //_tempList = GetComponentsInParent<Renderer>().ToList();
-        //_tempList.RemoveAt(_tempList.Count - 1);
-
-        //_rendererList = _rendererList.Union(_tempList).ToList();   
     }
 
     private void Awake()
