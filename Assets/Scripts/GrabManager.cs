@@ -6,9 +6,8 @@ using UnityEngine;
 public class GrabManager : MonoBehaviour
 {
     [SerializeField] private SelectionManager _selectionManager;
-
-    private IGrabbable _grabSelection;
-
+    [SerializeField] private Grabber _grabber = default;
+ 
     private void OnEnable()
     {
         _selectionManager.OnSelectionChanged += OnSelectionChanged;
@@ -19,12 +18,27 @@ public class GrabManager : MonoBehaviour
         _selectionManager.OnSelectionChanged -= OnSelectionChanged;
     }
 
-    private void OnSelectionChanged(Transform obj)
+    private void OnSelectionChanged(Transform obj, RaycastHit selectionHit)
     {
-        _grabSelection?.OnDropObject();
-        if (obj && obj.TryGetComponent(out _grabSelection))
+        if (obj && obj.TryGetComponent<IGrabbable>(out var grabbable))
         {
-            _grabSelection.OnGrabObject(obj);
+            _grabber.transform.position = selectionHit.point;
+            //_grabber.transform.forward = selectionHit.normal;
+            _grabber.Grab(grabbable);
+        }
+        else
+        {
+            _grabber.Release();  
+        }
+    }
+
+    private void Update()
+    {
+        if (_grabber.IsHoldingObject)
+        {
+            _grabber.transform.SetPositionAndRotation(default, default);
+            //float zCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+            //transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, zCoord));
         }
     }
 }

@@ -8,6 +8,8 @@ public class Grabbable : MonoBehaviour, IGrabbable
 
     public bool GrabActive { get; private set; }
 
+    public GameObject GameObject => gameObject;
+
     public void OnGrabObject(Transform obj)
     {
         GrabActive = true;
@@ -24,10 +26,20 @@ public class Grabbable : MonoBehaviour, IGrabbable
     {
         Debug.Log("Grabbeded: ");
     }
+
+    public void UpdatePosition(Vector3 position)
+    {
+        //Target Position
+        //ConstraintManager.ApplyConstraints(Target Position)
+        //Move to 
+    }
+    
+    
 }
 
 public interface IGrabbable
 {
+    public GameObject GameObject { get; }
     public void OnGrabObject(Transform obj);
     public void OnDropObject();
 }

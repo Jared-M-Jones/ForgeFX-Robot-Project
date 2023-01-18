@@ -30,7 +30,7 @@ public class HighlightManager : MonoBehaviour
         }
     }
 
-    private void OnSelectionChanged(Transform obj)
+    private void OnSelectionChanged(Transform obj, RaycastHit hit)
     {
         _selectionTarget?.OnDeselectObject();
         if (obj && obj.TryGetComponent(out _selectionTarget))

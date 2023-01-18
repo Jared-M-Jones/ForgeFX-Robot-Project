@@ -6,19 +6,19 @@ using UnityEngine;
 public class SelectionManager : MonoBehaviour
 {
     [SerializeField] private RaycastProvider _raycastProvider;
-
+    
     private Transform _hover;
     private Transform _selection;
 
     public event Action<Transform> OnHoverChanged = delegate { };
-    public event Action<Transform> OnSelectionChanged = delegate { };
+    public event Action<Transform, RaycastHit> OnSelectionChanged = delegate { };
 
     private void Update()
     {
-        var selection = _raycastProvider.GetSelection();
+        var selection = _raycastProvider.GetSelection(out var selectionHit);
 
         UpdateHover(selection);
-        UpdateSelection(selection);
+        UpdateSelection(selection, selectionHit);
     }
 
     private void UpdateHover(Transform selection)
@@ -29,16 +29,16 @@ public class SelectionManager : MonoBehaviour
         _hover = selection;
     }
 
-    private void UpdateSelection(Transform selection)
+    private void UpdateSelection(Transform selection, RaycastHit selectionHit)
     {
         if (Input.GetMouseButtonDown(0))
         {
-            OnSelectionChanged(selection);
+            OnSelectionChanged(selection, selectionHit);
             _selection = selection;
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            OnSelectionChanged(null);
+            OnSelectionChanged(null, default);
             _selection = null;
         }
     }

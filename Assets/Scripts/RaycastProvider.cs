@@ -6,7 +6,8 @@ using UnityEngine;
 public class RaycastProvider : MonoBehaviour
 {
     [SerializeField] private LayerMask _layer;
-
+    private RaycastHit _lastHit;
+    
     private Transform _selection;
 
     private Ray CreateRayAtMousePointer()
@@ -17,19 +18,20 @@ public class RaycastProvider : MonoBehaviour
     private void CheckRayHit(Ray ray)
     {
         _selection = null;
-        if (Physics.Raycast(ray, out var hit, _layer))
+        if (Physics.Raycast(ray, out _lastHit, _layer))
         {
-            var selection = hit.transform;
+            var selection = _lastHit.transform;
             _selection = selection;
 
             Debug.DrawRay(ray.origin, ray.direction);
-            Debug.Log(hit.collider, hit.collider);
+            Debug.Log(_lastHit.collider, _lastHit.collider);
         }
     }
 
-    public Transform GetSelection()
+    public Transform GetSelection(out RaycastHit hit)
     {
         CheckRayHit(CreateRayAtMousePointer());
+        hit = _lastHit;
         return _selection;
     }
 }

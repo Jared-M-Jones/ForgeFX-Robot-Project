@@ -58,7 +58,7 @@ public class GrabScript : MonoBehaviour
         _selectionManager.OnSelectionChanged -= OnSelectionChanged;
     }
 
-    private void OnSelectionChanged(Transform obj)
+    private void OnSelectionChanged(Transform obj, RaycastHit hit)
     {
         if (_grabSelection != default)
         {
