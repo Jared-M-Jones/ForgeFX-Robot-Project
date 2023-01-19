@@ -8,7 +8,7 @@ public class Grabber : MonoBehaviour
     public bool IsHoldingObject => _grabbable != default;
     private IGrabbable _grabbable;
     private Vector3 _lastPosition;
-    
+
     public void Grab(IGrabbable grabbable)
     {
         _grabbable = grabbable;
@@ -21,6 +21,11 @@ public class Grabber : MonoBehaviour
     }
 
     private void Update()
+    {
+        UpdateGrabbablePosition();
+    }
+
+    private void UpdateGrabbablePosition()
     {
         if (_grabbable == null) return;
         _grabbable.GameObject.transform.position += transform.position - _lastPosition;

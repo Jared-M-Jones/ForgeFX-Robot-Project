@@ -7,7 +7,6 @@ public class RaycastProvider : MonoBehaviour
 {
     [SerializeField] private LayerMask _layer;
     private RaycastHit _lastHit;
-    
     private Transform _selection;
 
     private Ray CreateRayAtMousePointer()

@@ -24,7 +24,7 @@ public class Grabbable : MonoBehaviour, IGrabbable
 
     private void UpdateState()
     {
-        Debug.Log("Grabbeded: ");
+
     }
 
     public void UpdatePosition(Vector3 position)
@@ -40,6 +40,4 @@ public class Grabbable : MonoBehaviour, IGrabbable
 public interface IGrabbable
 {
     public GameObject GameObject { get; }
-    public void OnGrabObject(Transform obj);
-    public void OnDropObject();
 }

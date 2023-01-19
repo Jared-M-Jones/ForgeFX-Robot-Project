@@ -47,12 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 632033147037566372}
   - {fileID: 271171034320734746}
-  - {fileID: 7316672064111164768}
-  - {fileID: 4667269272711085715}
 --- !u!33 &2787017655853851126
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -129,6 +127,7 @@ GameObject:
   - component: {fileID: 8013844934982828283}
   - component: {fileID: 1517309482507357314}
   - component: {fileID: 2281728502270471666}
+  - component: {fileID: 1845423687}
   m_Layer: 6
   m_Name: Robot_Lowerarm_Right
   m_TagString: Untagged
@@ -163,11 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 1517309482507357314}
   - {fileID: 1703921034415534413}
-  - {fileID: 2419989529726547880}
 --- !u!33 &8013844934982828283
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -231,6 +229,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4864283720540968698, guid: a990358fcfccb73468a5ac76ecfafcf4, type: 3}
+--- !u!114 &1845423687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2281728502270471180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b1aec13415bb54b9c37fa5beb47613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabber: {fileID: 0}
 --- !u!1 &2871067628140430530
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,12 +320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 7316672064111164768}
   - {fileID: 632033147037566372}
   - {fileID: 271171034320734746}
-  - {fileID: 4667269272711085715}
 --- !u!33 &6619704920918770311
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -777,12 +787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 5010144239500688404}
-  - {fileID: 7555242117044797247}
-  - {fileID: 6736629141764839526}
-  - {fileID: 4667269272711085715}
 --- !u!33 &6273126968934433147
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -893,12 +900,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 6736629141764839526}
   - {fileID: 7555242117044797247}
   - {fileID: 5010144239500688404}
-  - {fileID: 4667269272711085715}
 --- !u!33 &1330127428244602938
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1008,12 +1014,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 271171034320734746}
-  - {fileID: 632033147037566372}
-  - {fileID: 7316672064111164768}
-  - {fileID: 4667269272711085715}
 --- !u!33 &4458285882303674106
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1123,11 +1126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 8569694035497260077}
-  - {fileID: 1840647940872091074}
-  - {fileID: 811782143913774676}
 --- !u!33 &1988095161884470397
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1244,8 +1245,6 @@ MonoBehaviour:
   - {fileID: 2141582027323538475}
   - {fileID: 1213278002391171921}
   - {fileID: 4089600603287978680}
-  - {fileID: 8043792627625114260}
-  - {fileID: 796842697533361737}
 --- !u!33 &6970958162347564782
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1356,11 +1355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 1840647940872091074}
   - {fileID: 8569694035497260077}
-  - {fileID: 811782143913774676}
 --- !u!33 &1699983963150968191
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1473,10 +1471,6 @@ MonoBehaviour:
   _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 4089600603287978680}
-  - {fileID: 2141582027323538475}
-  - {fileID: 1213278002391171921}
-  - {fileID: 796842697533361737}
-  - {fileID: 8043792627625114260}
 --- !u!33 &6625100411121521904
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1589,10 +1583,6 @@ MonoBehaviour:
   _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 1213278002391171921}
-  - {fileID: 2141582027323538475}
-  - {fileID: 4089600603287978680}
-  - {fileID: 8043792627625114260}
-  - {fileID: 2141582027323538475}
 --- !u!33 &4317783273131706480
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1709,6 +1699,11 @@ MonoBehaviour:
   _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 943723806922274824}
+  - {fileID: 796842697533361737}
+  - {fileID: 2141582027323538475}
+  - {fileID: 1213278002391171921}
+  - {fileID: 4089600603287978680}
+  - {fileID: 8043792627625114260}
   - {fileID: 4667269272711085715}
   - {fileID: 6736629141764839526}
   - {fileID: 7555242117044797247}
@@ -1716,11 +1711,6 @@ MonoBehaviour:
   - {fileID: 7316672064111164768}
   - {fileID: 632033147037566372}
   - {fileID: 271171034320734746}
-  - {fileID: 796842697533361737}
-  - {fileID: 2141582027323538475}
-  - {fileID: 1213278002391171921}
-  - {fileID: 4089600603287978680}
-  - {fileID: 8043792627625114260}
   - {fileID: 811782143913774676}
   - {fileID: 1840647940872091074}
   - {fileID: 8569694035497260077}
@@ -1803,6 +1793,7 @@ GameObject:
   - component: {fileID: 5718407287444376394}
   - component: {fileID: 1703921034415534413}
   - component: {fileID: 7828360847583342358}
+  - component: {fileID: 1700248173}
   m_Layer: 6
   m_Name: Robot_Hand_Right
   m_TagString: Untagged
@@ -1836,11 +1827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 1703921034415534413}
-  - {fileID: 1517309482507357314}
-  - {fileID: 2419989529726547880}
 --- !u!33 &5718407287444376394
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1904,6 +1893,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5036805727328790170, guid: a990358fcfccb73468a5ac76ecfafcf4, type: 3}
+--- !u!114 &1700248173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828360847583342352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b1aec13415bb54b9c37fa5beb47613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabber: {fileID: 0}
 --- !u!1 &7955793903456485205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,10 +1955,6 @@ MonoBehaviour:
   _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 8043792627625114260}
-  - {fileID: 2141582027323538475}
-  - {fileID: 1213278002391171921}
-  - {fileID: 4089600603287978680}
-  - {fileID: 796842697533361737}
 --- !u!33 &5722176393437739705
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2067,12 +2065,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e2235e6ac4b574f886c662f21d94a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highlightData: {fileID: 0}
+  _highlightData: {fileID: 11400000, guid: 88acecb28ca01eb42bc8c26e05b9cdda, type: 2}
   _rendererList:
   - {fileID: 7555242117044797247}
   - {fileID: 5010144239500688404}
-  - {fileID: 6736629141764839526}
-  - {fileID: 4667269272711085715}
 --- !u!33 &6619179862503540467
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2149,6 +2145,7 @@ GameObject:
   - component: {fileID: 6277730070926612753}
   - component: {fileID: 2419989529726547880}
   - component: {fileID: 8747102300775821911}
+  - component: {fileID: 1506103810}
   m_Layer: 6
   m_Name: Robot_Upperarm_Right
   m_TagString: Untagged
@@ -2251,3 +2248,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6146676407004857523, guid: a990358fcfccb73468a5ac76ecfafcf4, type: 3}
+--- !u!114 &1506103810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747102300775821904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b1aec13415bb54b9c37fa5beb47613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabber: {fileID: 0}
