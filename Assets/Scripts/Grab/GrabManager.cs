@@ -7,7 +7,7 @@ public class GrabManager : MonoBehaviour
 {
     [SerializeField] private SelectionManager _selectionManager;
     [SerializeField] private Grabber _grabber = default;
-    [SerializeField] private float _scrollScale = 0.05f;
+    [SerializeField] private float _scrollScale = 0.01f;
 
     private void OnEnable()
     {
@@ -38,9 +38,9 @@ public class GrabManager : MonoBehaviour
         UpdateGrabberPosition(UpdateZCoordinate());
     }
 
-    public float UpdateZCoordinate()
+    private float UpdateZCoordinate()
     {
-        float zCoord = Camera.main.WorldToScreenPoint(transform.position).z;
+        float zCoord = Camera.main.WorldToScreenPoint(_grabber.transform.position).z;
         if (_grabber.IsHoldingObject)
         {
             return zCoord += Input.mouseScrollDelta.y * _scrollScale;
@@ -53,7 +53,7 @@ public class GrabManager : MonoBehaviour
 
     private void UpdateGrabberPosition(float zCoord)
     {
-        _grabber.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, zCoord));
+        _grabber.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, zCoord ));
 
         if (_grabber.IsHoldingObject)
         {
