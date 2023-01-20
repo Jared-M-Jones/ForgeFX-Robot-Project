@@ -89,3 +89,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectionManager: {fileID: 7370298374384211827}
   _grabber: {fileID: 0}
+  _scrollScale: 0.05

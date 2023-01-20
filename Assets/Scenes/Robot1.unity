@@ -790,25 +790,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grabber
       objectReference: {fileID: 0}
-    - target: {fileID: 772320146741752514, guid: 5a180b73aab95dc4680ed7435a0b6dc2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 772320146741752515, guid: 5a180b73aab95dc4680ed7435a0b6dc2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 437aab7a8a00aae45ae18d03bb41f661, type: 2}
     - target: {fileID: 772320146741752517, guid: 5a180b73aab95dc4680ed7435a0b6dc2, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 772320146741752517, guid: 5a180b73aab95dc4680ed7435a0b6dc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1835
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 772320146741752517, guid: 5a180b73aab95dc4680ed7435a0b6dc2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1965
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 772320146741752517, guid: 5a180b73aab95dc4680ed7435a0b6dc2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -962,7 +954,7 @@ PrefabInstance:
       objectReference: {fileID: 496397609}
     - target: {fileID: 491941071, guid: 73dd3373ff5c7d9448996bc0e44637f2, type: 3}
       propertyPath: _scrollScale
-      value: 0.05
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 7370298374384211788, guid: 73dd3373ff5c7d9448996bc0e44637f2, type: 3}
       propertyPath: m_RootOrder

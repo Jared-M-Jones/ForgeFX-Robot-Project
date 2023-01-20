@@ -33,8 +33,6 @@ public class Grabbable : MonoBehaviour, IGrabbable
         //ConstraintManager.ApplyConstraints(Target Position)
         //Move to 
     }
-    
-    
 }
 
 public interface IGrabbable

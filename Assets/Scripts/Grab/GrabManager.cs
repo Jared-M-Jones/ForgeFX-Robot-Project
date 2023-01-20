@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GrabManager : MonoBehaviour
@@ -53,12 +54,19 @@ public class GrabManager : MonoBehaviour
 
     private void UpdateGrabberPosition(float zCoord)
     {
-        _grabber.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, zCoord ));
-
         if (_grabber.IsHoldingObject)
         {
             _grabber.transform.SetPositionAndRotation(default, default);
             _grabber.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, zCoord));
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_grabber.IsHoldingObject)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(_grabber.transform.position, 0.01f);
         }
     }
 }
