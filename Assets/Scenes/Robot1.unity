@@ -270,6 +270,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grabber: {fileID: 496397609}
+--- !u!1 &405624046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 405624048}
+  - component: {fileID: 405624047}
+  m_Layer: 6
+  m_Name: Robot_Eye_Right_Attach_Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &405624047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405624046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971de2f544a9e9e4c82aef2088763f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &405624048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405624046}
+  m_LocalRotation: {x: 0.000000061567306, y: 0.000000007450581, z: 3.2080522e-15, w: 1}
+  m_LocalPosition: {x: 0.0111, y: 0.0117, z: 0.0296}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 405770030858569972}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &496397609 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 772320146741752513, guid: 5a180b73aab95dc4680ed7435a0b6dc2, type: 3}
@@ -560,6 +603,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grabber: {fileID: 496397609}
+--- !u!114 &1509243860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509243858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930100181b0b1de42b8f9f0ff2d3496f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attachPoint: {fileID: 405624047}
 --- !u!1 &1726254507 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8240230119594573984, guid: ce65521c52c0c8b4981c2ebce3e7df81, type: 3}
@@ -777,8 +833,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5896722763491178028, guid: ce65521c52c0c8b4981c2ebce3e7df81, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce65521c52c0c8b4981c2ebce3e7df81, type: 3}
+--- !u!4 &405770030858569972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 987371792200323741, guid: ce65521c52c0c8b4981c2ebce3e7df81, type: 3}
+  m_PrefabInstance: {fileID: 405770030858569971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &772320146264760296
 PrefabInstance:
   m_ObjectHideFlags: 0
